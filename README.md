@@ -3,7 +3,7 @@ An attempt at recreating the board game called "Abalone".
 
 # RESOURCES
 Abalone:
-https://boardgamegeek.com/boardgame/526/abalone-classic
+https://boardgamegeek.com/boardgame/526/abalone-classic \n
 https://en.wikipedia.org/wiki/Abalone_(board_game)
 
 GitHub Help:
