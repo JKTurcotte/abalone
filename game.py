@@ -140,7 +140,7 @@ class game:
 
 # Testing
 test = game(1,3)
-for x in test.getBoard():
+#for x in test.getBoard():
     #print(x)
 print(test.move(8, 7, 3, 3, -3))
 
