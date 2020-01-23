@@ -1,7 +1,3 @@
-from typing import Any
-import random
-
-
 class game:
 
     def __init__(self, setUp, capturedToWin):
