@@ -3,66 +3,61 @@ class game:
     def __init__(self, setUp, capturedToWin):
         self.setUp = setUp
         self.capturedToWin = capturedToWin
-        self.turn = 2
-        self.board = [[4, 4, 4, 4, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 4, 4, 4, 4],
-                     [4, 4, 4, 4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4, 4, 4, 4],
-                     [4, 4, 4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4, 4, 4],
-                     [4, 4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4, 4],
-                     [4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4],
-                     [3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3],
-                     [4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4],
-                     [4, 4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4, 4],
-                     [4, 4, 4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4, 4, 4],
-                     [4, 4, 4, 4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4, 4, 4, 4],
-                     [4, 4, 4, 4, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 4, 4, 4, 4]]
+        self.turn = 1
+        self.board = [
+                      [4,4,4,3,0,0,0,0,0],
+                      [4,4,3,0,0,0,0,0,0],
+                      [4,3,0,0,0,0,0,0,0],
+                      [3,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0],
+                      [3,0,0,0,0,0,0,0,0], 
+                      [3,3,0,0,0,0,0,0,0],
+                      [3,3,3,0,0,0,0,0,0],
+                      [3,3,3,3,0,0,0,0,0]]
         #setUpDefault()
-        self.board = [[4, 4, 4, 4, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 4, 4, 4, 4],
-                      [4, 4, 4, 4, 3, 4, 1, 4, 1, 4, 1, 4, 1, 4, 1, 4, 3, 4, 4, 4, 4],
-                      [4, 4, 4, 3, 4, 1, 4, 1, 4, 1, 4, 1, 4, 1, 4, 1, 4, 3, 4, 4, 4],
-                      [4, 4, 3, 4, 0, 4, 0, 4, 1, 4, 1, 4, 1, 4, 0, 4, 0, 4, 3, 4, 4],
-                      [4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4],
-                      [3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3],
-                      [4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4],
-                      [4, 4, 3, 4, 0, 4, 0, 4, 2, 4, 2, 4, 2, 4, 0, 4, 0, 4, 3, 4, 4],
-                      [4, 4, 4, 3, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 3, 4, 4, 4],
-                      [4, 4, 4, 4, 3, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 3, 4, 4, 4, 4],
-                      [4, 4, 4, 4, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 4, 4, 4, 4]]
-
+        self.board = [
+                      [4,4,4,3,1,1,1,1,1],
+                      [4,4,3,1,1,1,1,1,1],
+                      [4,3,0,0,1,1,1,0,0],
+                      [3,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0],
+                      [3,0,0,0,0,0,0,0,0], 
+                      [3,3,0,0,2,2,2,0,0],
+                      [3,3,3,2,2,2,2,2,2],
+                      [3,3,3,3,2,2,2,2,2]]
     def setUpDefault(self):
-        self.board = [[4, 4, 4, 4, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 4, 4, 4, 4],
-                      [4, 4, 4, 4, 3, 4, 1, 4, 1, 4, 1, 4, 1, 4, 1, 4, 3, 4, 4, 4, 4],
-                      [4, 4, 4, 3, 4, 1, 4, 1, 4, 1, 4, 1, 4, 1, 4, 1, 4, 3, 4, 4, 4],
-                      [4, 4, 3, 4, 0, 4, 0, 4, 1, 4, 1, 4, 1, 4, 0, 4, 0, 4, 3, 4, 4],
-                      [4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4],
-                      [3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3],
-                      [4, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 3, 4],
-                      [4, 4, 3, 4, 0, 4, 0, 4, 2, 4, 2, 4, 2, 4, 0, 4, 0, 4, 3, 4, 4],
-                      [4, 4, 4, 3, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 3, 4, 4, 4],
-                      [4, 4, 4, 4, 3, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 3, 4, 4, 4, 4],
-                      [4, 4, 4, 4, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 4, 4, 4, 4]]
-
+        self.board = [
+                      [4,4,4,3,1,1,1,1,1],
+                      [4,4,3,1,1,1,1,1,1],
+                      [4,3,0,0,1,1,1,0,0],
+                      [3,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0],
+                      [3,0,0,0,0,0,0,0,0], 
+                      [4,3,0,0,2,2,2,0,0],
+                      [4,4,3,2,2,2,2,2,2],
+                      [4,4,3,3,2,2,2,2,2]]
     def move(self, pivotX, pivotY, numSelections, selectDirection, moveDirection):
         toMove = [[0,0],[0,0],[0,0]]
 
         # Allows us to make the array of marbles to be move much easier
         if selectDirection == 1:
-            toAddX = 1
+            toAddX = 0
             toAddY = -1
         elif selectDirection == 2:
-            toAddX = 2
-            toAddY = 0
+            toAddX = 1
+            toAddY = -1
         elif selectDirection == 3:
             toAddX = 1
-            toAddY = 1
+            toAddY = 0
         elif selectDirection == -1:
-            toAddX = -1
+            toAddX = 0
             toAddY = 1
         elif selectDirection == -2:
-            toAddX = -2
-            toAddY = 0
-        elif selectDirection == -3:
             toAddX = -1
             toAddY = -1
+        elif selectDirection == -3:
+            toAddX = -1
+            toAddY = 0
         else:
             return false
 
@@ -72,23 +67,23 @@ class game:
 
         # Changes the toAdd parameters to the move direction
         if moveDirection == 1:
-            toAddX = 1
+            toAddX = 0
             toAddY = -1
         elif moveDirection == 2:
-            toAddX = 2
-            toAddY = 0
+            toAddX = 1
+            toAddY = -1
         elif moveDirection == 3:
             toAddX = 1
-            toAddY = 1
+            toAddY = 0
         elif moveDirection == -1:
-            toAddX = -1
+            toAddX = 0
             toAddY = 1
         elif moveDirection == -2:
-            toAddX = -2
-            toAddY = 0
-        elif moveDirection == -3:
             toAddX = -1
             toAddY = -1
+        elif moveDirection == -3:
+            toAddX = -1
+            toAddY = 0
         else:
             return False
 
@@ -96,7 +91,7 @@ class game:
         for i in range(0, numSelections):
             # Checks to make sure that each marble is theirs and that they are all in the playing feild
             if self.board[toMove[i][0]][toMove[i][1]] != self.turn:
-                print(toMove)
+                print("help")
                 return False
 
             # Checks to see if we need to check pushing because you cant push with only 1 piece
@@ -112,17 +107,22 @@ class game:
                         return False
                     # if we are here then we need to Push the other players marbles
                     for j in range(numSelections - 1, 0, -1):
-                       self.board[toMove[i][0] + (toAddY * (j + 1))][toMove[i][1] + (toAddX * (j + 1))] = (self.turn % 2) + 1
                        self.board[toMove[i][0] + (toAddY * j)][toMove[i][1] + (toAddX * j)] = 0
+                       self.board[toMove[i][0] + (toAddY * (j + 1))][toMove[i][1] + (toAddX * (j + 1))] = (self.turn % 2) + 1
             else:
                 if self.board[toMove[i][0] + toAddY][toMove[i][1] + toAddX] != 0:
                     return False
 
-        # now that all the pushing is done we just move the marbles
-        for i in range(0, numSelections):
-           self.board[toMove[i][0] + toAddY][toMove[i][1] + toAddX] = self.turn
-           self.board[toMove[i][0]][toMove[i][1]] = 0
-
+            # now that all the pushing is done we just move the marbles
+        if selectDirection == -moveDirection:
+            for i in range(0, numSelections, 1):
+               self.board[toMove[i][0]][toMove[i][1]] = 0
+               self.board[toMove[i][0] + toAddY][toMove[i][1] + toAddX] = self.turn
+        else:
+            for i in range(numSelections - 1, -1, -1):
+               self.board[toMove[i][0]][toMove[i][1]] = 0
+               self.board[toMove[i][0] + toAddY][toMove[i][1] + toAddX] = self.turn
+            
         #update whos turn it is
         self.turn = (self.turn % 2) + 1
         return self.board
@@ -136,12 +136,17 @@ class game:
 
 # Testing
 test = game(1,3)
-#for x in test.getBoard():
-    #print(x)
-print(test.move(8, 7, 3, 3, -3))
+for x in test.getBoard():
+    print(x)
+print(test.move(5, 0, 3, -1, -1))
 
 for x in test.getBoard():
     print(x)
+print(test.move(6, 6, 3, -3, 1))
+
+for x in test.getBoard():
+    print(x)
+
 
 
 
