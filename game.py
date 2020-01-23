@@ -138,11 +138,12 @@ class game:
 test = game(1,3)
 for x in test.getBoard():
     print(x)
-print(test.move(5, 0, 3, -1, -1))
-
+test.move(6, 2, 3, -3, -1)
+print("------------------------")
 for x in test.getBoard():
     print(x)
-print(test.move(6, 6, 3, -3, 1))
+test.move(6, 6, 3, -3, 1)
+print("------------------------")
 
 for x in test.getBoard():
     print(x)
