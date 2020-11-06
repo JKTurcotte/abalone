@@ -5,25 +5,36 @@ import pygame
 true = True
 false = False
 
+screenWidth = 1060
+screenHeight = 768
+
+tilePath = "imgs/tile.png"
+logoPath = "imgs/logo.png"
+
+gameTitle = "Abalone"
+
+tileSpaceX = 50
+tileSpaceY = 50
+tileSpaceOffset = 25
+
 def gui():
     """handles creating the user interface"""
 
     #init pygame
     pygame.init()
-    logo = pygame.image.load("imgs/logo.png")
+    logo = pygame.image.load(logoPath)
     pygame.display.set_icon(logo)
-    pygame.display.set_caption("Abalone")
+    pygame.display.set_caption(gameTitle)
 
     #create a surface
-    screen = pygame.display.set_mode((1040,768))
+    screen = pygame.display.set_mode((screenWidth,screenHeight))
+
+    #init board
+    tile = pygame.image.load(tilePath)
+    tile = pygame.transform.scale(tile, (tileSpaceX,tileSpaceY))
 
     #exit variable
     running = true
-
-    # image = pygame.image.load("imgs/logo.png")
-    # screen.blit(image, (50,50))
-    # pygame.display.flip()
-    generate_board(screen)
 
     #main loop
     while running:
@@ -37,13 +48,24 @@ def gui():
         if(keys[pygame.K_q]):
             running = false
 
-def generate_board(screen):
-    """generates the board"""
+        generate_board(screen, tile)
 
-    tile = pygame.image.load("imgs/logo.png")
-    tile = pygame.transform.scale(tile, (75,75))
-    screen.blit(tile, (0,0))
+def render_board(screen, tile, x, y):
+    """renders the board"""
+
+    screen.blit(tile, (x,y))
     pygame.display.flip()
-    
+
+def generate_board(screen, tile):
+    k = 4
+    for i in range(9):
+        if(i < 5):
+            k = k + 1
+            l = tileSpaceOffset * (4 - i)
+        else:
+            k = k - 1
+            l = tileSpaceOffset * (i - 4)
+        for j in range(k):
+            render_board(screen, tile, (tileSpaceX * j) + l, tileSpaceY * i)
 
 gui()
